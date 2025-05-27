@@ -1,0 +1,64 @@
+.array("images", 5);
+
+// export const createProduct = async (req, res) => {
+//   try {
+//     const { title, description, price, feature, imgUrls, category } = req.body;
+//     const errors = [];
+
+//     if (!title || title.trim().length < 5) {
+//       errors.push("Title must be at least 5 characters long.");
+//     }
+//     if (!description || description.trim().length < 10) {
+//       errors.push("Description must be at least 10 characters long.");
+//     }
+//     if (!price || isNaN(price) || price <= 0) {
+//       errors.push("Price must be a positive number.");
+//     }
+//     if (!feature || feature.length === 0) {
+//       errors.push("Feature must be a non-empty array.");
+//     }
+//     if (!category || !["Electronics", "Fashion", "Home", "Books", "Toys"].includes(category)) {
+//       errors.push("Invalid category. Must be one of: Electronics, Fashion, Home, Books, Toys.");
+//     }
+
+//     let images = [];
+//     // Handle uploaded images
+//     if (req.files && req.files.length > 0) {
+//       images = req.files.map((file) => `/uploads/${file.filename}`);
+//     }
+
+//     // Handle image URLs from request body
+//     if (imgUrls && Array.isArray(imgUrls)) {
+//       imgUrls.forEach((url) => {
+//         if (!url.match(/^https?:\/\/.+\.(jpg|jpeg|png|gif)$/)) {
+//           errors.push(`Invalid image URL format: ${url}`);
+//         } else {
+//           images.push(url);
+//         }
+//       });
+//     }
+
+//     if (images.length === 0) {
+//       errors.push("At least one valid image or URL is required.");
+//     }
+
+// if (errors.length > 0) {
+//   return res.status(400).json({ success: false, errors });
+// }
+
+
+//     const newProduct = new Product({
+//       title: title.trim(),
+//       description: description.trim(),
+//       price: parseFloat(price),
+//       images,
+//       feature,
+//       category, // Add category field
+//     });
+
+//     await newProduct.save();
+//     res.status(201).json({ success: true, message: "Product created successfully", data: newProduct });
+//   } catch (error) {
+//     res.status(500).json({ error: error.message });
+//   }
+// };

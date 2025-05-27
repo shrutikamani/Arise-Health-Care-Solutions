@@ -1,0 +1,83 @@
+.sidebar {
+  width: 260px;
+  transition: width 0.3s ease-in-out;
+}
+
+.collapsed {
+  width: 80px;
+}
+
+.toggle-btn {
+  position: absolute;
+  right: -40px;
+  top: 15px;
+  z-index: 10;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  padding: 5px 10px;
+}
+
+.toggle-btn:hover {
+  background: black;
+  color: white;
+  transform: scale(1.1);
+}
+
+.nav-link {
+  white-space: nowrap;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: flex;  
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #007bff;
+}
+
+.nav-link .sidebar-icon {
+  font-size: 20px;
+  min-width: 30px;
+}
+
+.nav-item button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: white;
+}
+
+.nav-item button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar.expanded {
+    width: 250px;
+  }
+}
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #1a202c; /* Match the sidebar background */
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #4a5568; /* Gray thumb */
+  border-radius: 4px;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #718096; /* Lighter gray on hover */
+}
