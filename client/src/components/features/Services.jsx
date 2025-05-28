@@ -1,3 +1,103 @@
+// import React, { useEffect } from "react";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "animate.css";
+// import "../style.css";
+// import { Link } from "react-router-dom";
+
+// const Services = () => {
+//   useEffect(() => {
+//     AOS.init({ duration: 1000 });
+//   }, []);
+
+//   const services = [
+//     {
+//       id: 1,
+//       imgSrc: "/img/service-1.jpg",
+//       title: "Hospital Furniture",
+//       description: "Providing the best hospital furniture for maximum comfort.",
+//     },
+//     {
+//       id: 2,
+//       imgSrc: "/img/service-2.jpg",
+//       title: "Operation Theater",
+//       description: "Equipped with advanced tools for surgeries and treatments.",
+//     },
+//     {
+//       id: 3,
+//       imgSrc: "/img/service-3.png",
+//       title: "ICU Product",
+//       description: "High-quality ICU products for critical care needs.",
+//     },
+
+//   ];
+
+//   return (
+//     <div className="container-fluid  py-5 px-5">
+
+//         {/* Section Title */}
+//         <div className="section-title mb-5" data-aos="fade-down" data-aos-delay="200">
+//           <div className="sub-style">
+//             <h4 className="sub-title px-3 mb-0">What We Do</h4>
+//           </div>
+//           <h1 className="display-3 mb-4 fw-semibold">Our Service Given By Expert.</h1>
+//           <p className="mb-0">
+//             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas maxime veniam necessitatibus saepe in ab? Repellat!
+//           </p>
+//         </div>
+
+//         {/* Service Cards */}
+//         <div className="row g-5 justify-content-center">
+//           {services.map((service, index) => (
+//             <div
+//               key={index}
+//               data-aos="fade-up"
+//               data-aos-delay={200 * (index + 1)}
+//               className="col-md-6 col-lg-4 col-xl-4 h-full"
+//             >
+//               <div className="service-item rounded shadow">
+//                 {/* Service Image */}
+//                 <div className="service-img rounded-top overflow-hidden">
+//                   <img
+//                     src={service.imgSrc}
+//                     className="img-fluid rounded-top w-100"
+//                     alt={service.title}
+//                   />
+//                 </div>
+
+//                 {/* Service Content */}
+//                 <div className="service-content rounded-bottom bg-light p-4">
+//                   <h3 className="mb-4">{service.title}</h3>
+//                   <p className="mb-4">{service.description}</p>
+//                   <Link to="/" className="btn btn-info rounded-pill text-white py-2 px-4 mb-2">
+//                     Read More
+//                   </Link>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+
+//         {/* More Services Button */}
+//         {/* <div className="col-12 my-5 text-center" data-aos="fade-up" data-aos-delay="800">
+//           <Link to="/services" className="btn btn-info rounded-pill text-white py-3 px-5">
+//             View More Services
+//           </Link>
+//         </div> */}
+//       </div>
+
+//   );
+// };
+
+// export default Services;
+
+
+
+
+
+///finel-----------------------------------
+
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";

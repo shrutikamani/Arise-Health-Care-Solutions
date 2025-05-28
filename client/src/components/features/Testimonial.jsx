@@ -1,3 +1,28 @@
+// import React from "react";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "../style.css";
+
+// const Testimonial = () =>
+// {
+//   return (
+//     <div className="container-fluid testimonial mb-4">
+//       <div className="text-center">
+//         <div className=" mb-4">
+//           <div className="">
+//           <h4 className="relative text-4xl sm:text-6xl font-bold tracking-wider text-center px-3 mb-0 text-teal-300 uppercase z-0 pointer-events-none whitespace-nowrap opacity-20">
+//               Testimonial</h4>
+//           </div>
+//           <h1 className="text-6xl text-white">What Clients Are Saying</h1>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Testimonial;
+
+
+
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style.css";

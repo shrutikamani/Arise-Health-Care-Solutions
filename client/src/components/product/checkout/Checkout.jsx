@@ -89,6 +89,153 @@ const Checkout = () => {
     setIsEditingAddress(false);
   };
 
+  // const handlePayment = async () => {
+  //   if (cartItems.length === 0) {
+  //     setError("Cart is empty");
+  //     return;
+  //   }
+
+  //   // Validate shipping address
+  //   const requiredFields = [
+  //     "fullName",
+  //     "phoneNumber",
+  //     "pincode",
+  //     "address",
+  //     "city",
+  //     "state",
+  //     "country",
+  //   ];
+  //   const missingFields = requiredFields.filter((field) => !shippingAddress[field]?.trim());
+  //   if (missingFields.length) {
+  //     setError(`Please fill in all required address fields: ${missingFields.join(", ")}`);
+  //     setIsEditingAddress(true);
+  //     return;
+  //   }
+
+  //   // Prepare items for the backend
+  //   const items = cartItems.map((item) => ({
+  //     productId: item._id,
+  //     title: item.title,
+  //     price: item.price, // Send in rupees
+  //     quantity: item.quantity,
+  //     images: item.images || undefined,
+  //   }));
+
+  //   // Prepare shipping address
+  //   const shippingAddressPayload = {
+  //     fullName: shippingAddress.fullName,
+  //     phoneNumber: shippingAddress.phoneNumber,
+  //     pincode: shippingAddress.pincode,
+  //     address: shippingAddress.address,
+  //     city: shippingAddress.city,
+  //     state: shippingAddress.state,
+  //     country: shippingAddress.country,
+  //   };
+
+  //   // Prepare order payload
+  //   const orderPayload = {
+  //     userId,
+  //     totalAmount, // Send in rupees
+  //     items,
+  //     shippingAddress: shippingAddressPayload,
+  //   };
+
+  //   setLoading(true);
+  //   setError(null);
+
+  //   // Use environment variable or fallback
+  //   const API_URL ="http://localhost:3030";
+  //   const RAZORPAY_KEY ="rzp_test_hVNyQmIkE3244M";
+
+  //   if (paymentMethod === "UPI") {
+  //     if (!razorpayLoaded || !window.Razorpay) {
+  //       setError("Razorpay SDK not loaded. Please try again.");
+  //       setLoading(false);
+  //       return;
+  //     }
+
+  //     try {
+  //       // Step 1: Create Razorpay order
+  //       const { data: order } = await axios.post(
+  //         `${API_URL}/payment/checkout`,
+  //         { totalAmount } // Send in rupees
+  //       );
+
+  //       // Step 2: Initialize Razorpay
+  //       const options = {
+  //         key: RAZORPAY_KEY,
+  //         amount: order.amount, // Amount in paise from backend
+  //         currency: order.currency,
+  //         order_id: order.id,
+  //         name: "Your Company Name",
+  //         description: "Order Payment",
+  //         handler: async (response) => {
+  //           try {
+  //             // Step 3: Verify payment
+  //             const verifyResponse = await axios.post(
+  //               `${API_URL}/payment/verify`,
+  //               {
+  //                 razorpay_order_id: response.razorpay_order_id,
+  //                 razorpay_payment_id: response.razorpay_payment_id,
+  //                 razorpay_signature: response.razorpay_signature,
+  //                 totalAmount,
+  //                 items,
+  //                 userId,
+  //                 shippingAddress: shippingAddressPayload,
+  //               }
+  //             );
+
+  //             if (verifyResponse.data.success) {
+  //               dispatch(clearCart());
+  //               navigate(`/orders/${verifyResponse.data.userId || userId}`);
+  //             } else {
+  //               setError("Payment verification failed: " + verifyResponse.data.message);
+  //             }
+  //           } catch (err) {
+  //             console.error("Verification error:", err);
+  //             setError("Payment verification failed: " + err.message);
+  //           }
+  //         },
+  //         prefill: {
+  //           name: shippingAddress.fullName || "",
+  //           contact: shippingAddress.phoneNumber || "",
+  //         },
+  //         theme: {
+  //           color: "#3399cc",
+  //         },
+  //       };
+
+  //       const razorpay = new window.Razorpay(options);
+  //       razorpay.open();
+  //     } catch (err) {
+  //       console.error("Checkout error:", err);
+  //       setError("Failed to initiate payment: " + err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   } else {
+  //     // COD: Create order
+  //     try {
+  //       const response = await axios.post(
+  //         `${API_URL}/payment/cod`,
+  //         orderPayload
+  //       );
+
+  //       if (response.data.success) {
+  //         dispatch(clearCart());
+  //         navigate(`/orders/${response.data.userId || userId}`);
+  //       } else {
+  //         setError("Failed to create COD order: " + response.data.message);
+  //       }
+  //     } catch (err) {
+  //       console.error("COD error:", err);
+  //       setError("Failed to create COD order: " + err.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+  // };
+
   const handlePayment = async () => {
     if (cartItems.length === 0) {
       setError("Cart is empty. Please add items to your cart.");
