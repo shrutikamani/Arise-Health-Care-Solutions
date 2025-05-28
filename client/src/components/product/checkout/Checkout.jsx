@@ -89,6 +89,7 @@ const Checkout = () => {
     setIsEditingAddress(false);
   };
 
+
   const handlePayment = async () => {
     if (cartItems.length === 0) {
       setError("Cart is empty. Please add items to your cart.");

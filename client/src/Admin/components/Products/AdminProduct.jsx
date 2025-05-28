@@ -144,7 +144,36 @@ const AdminProduct = () => {
                   <div className="flex-1">
                     <h1 className="text-2xl capitalize font-bold">{product.title}</h1>
 
-                  
+                    {/* <p className="text-md text-gray-600 leading-relaxed break-words">
+                      {getTruncatedText(product.description, product.showMoreDescription)}
+                    </p>
+                    {product.description?.length > 50 && (
+                      <button
+                        onClick={() => handleToggleDescription(product._id)}
+                        className="text-blue-500 text-sm mt-2 hover:underline"
+                      >
+                        {product.showMoreDescription ? "Show Less" : "Read More"}
+                      </button>
+                    )}
+
+                    <p className="text-md text-gray-600 break-words">
+                      {Array.isArray(product.feature)
+                        ? getTruncatedText(product.feature.join(", "), product.showMoreFeature)
+                        : getTruncatedText(product.feature, product.showMoreFeature)}
+                    </p>
+                    {Array.isArray(product.feature) &&
+                      product.feature.join(", ").length > 50 && (
+                        <button
+                          onClick={() => handleToggleFeature(product._id)}
+                          className="text-blue-500 text-sm mt-2 hover:underline"
+                        >
+                          {product.showMoreFeature ? "Show Less" : "Read More"}
+                        </button>
+                      )}
+
+                    <p className="text-sm text-gray-500 mt-2">
+                      Category: <span className="font-semibold">{product.category}</span>
+                    </p>*/}
                   </div> 
 
                   <div className="flex justify-between items-center mt-4">

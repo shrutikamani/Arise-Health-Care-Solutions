@@ -35,8 +35,7 @@ const gujaratCities = [
 
 const cityOptions = gujaratCities.map((city) => ({ value: city, label: city }));
 
-const Appointment = () =>
-{
+const Appointment = () => {
   const [formData, setFormData] = useState({
     FirstName: "",
     LastName: "",
@@ -53,8 +52,7 @@ const Appointment = () =>
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) =>
-  {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { FirstName, LastName, email, MobileNumber, City, PinCode } = formData;
     if (!FirstName || !LastName || !email || !MobileNumber || !City || !PinCode) {
@@ -95,8 +93,7 @@ const Appointment = () =>
     }
   };
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
@@ -157,7 +154,7 @@ const Appointment = () =>
                 onChange={handleChange}
                 placeholder="Last Name"
                 required
-                className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
+                 className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -168,7 +165,7 @@ const Appointment = () =>
                 onChange={handleChange}
                 placeholder="Email"
                 required
-                className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
+                 className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
               />
               <input
                 type="tel"
@@ -177,7 +174,7 @@ const Appointment = () =>
                 onChange={handleChange}
                 placeholder="Mobile Number"
                 required
-                className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
+                 className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
               />
             </div>
 
@@ -187,7 +184,7 @@ const Appointment = () =>
                 value={formData.City}
                 onChange={handleChange}
                 required
-                className="w-full p-3 text-xl rounded-lg border border-teal-300 text-gray-800 appearance-none focus:ring-2 focus:ring-teal-500 pr-10 hover:border-teal-400 transition duration-300"
+                 className="w-full p-3 text-xl rounded-lg border border-teal-300 text-gray-800 appearance-none focus:ring-2 focus:ring-teal-500 pr-10 hover:border-teal-400 transition duration-300"
               >
                 {cityOptions.map((option) => (
                   <option
@@ -209,7 +206,7 @@ const Appointment = () =>
               onChange={handleChange}
               placeholder="Pin Code"
               required
-              className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
+               className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
             />
 
             <textarea
@@ -218,7 +215,7 @@ const Appointment = () =>
               onChange={handleChange}
               placeholder="Address"
               rows="2"
-              className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
+               className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
             />
             <textarea
               name="Message"
@@ -226,7 +223,7 @@ const Appointment = () =>
               onChange={handleChange}
               placeholder="Write Message"
               rows="4"
-              className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
+               className="w-full p-3 text-xl rounded-lg border border-teal-300 focus:ring-2 focus:ring-teal-500 text-gray-800 hover:border-teal-400 transition duration-300"
             />
 
             <button

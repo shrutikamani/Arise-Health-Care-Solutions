@@ -6,14 +6,14 @@ const initialState = {
     address: '',
     city: '',
     state: '',
-    pincode: '',
+    pincode: '',  
     country: '',
     phoneNumber: ''
   },
   cartItems: [],
   totalAmount: 0,
   userId: null,
-  orders: [] // To store order history
+  orders: [] 
 };
 
 const orderSlice = createSlice({

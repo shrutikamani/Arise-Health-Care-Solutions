@@ -1,0 +1,9 @@
+/* Add in src/index.css or App.css */
+.inner-image-zoom {
+  border-radius: 0.5rem;
+  cursor: zoom-in;
+}
+
+.inner-image-zoom-img {
+  transition: transform 0.3s ease;
+}
