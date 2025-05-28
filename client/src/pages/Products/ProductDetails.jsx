@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/Product-slice/cartSlice";
 import RelatedProduct from "./RelatedProduct";
 import QuestionForm from "./QuestionForm";
-import ProductZoom from "./ProductZoom";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -59,7 +58,7 @@ const ProductDetails = () => {
         <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 items-start">
           {/* Product Image Section */}
           <div className="flex items-center justify-center">
-            <ProductZoom
+            <img
               src={
                 product.images?.[0]
                   ? product.images[0].startsWith("http")
